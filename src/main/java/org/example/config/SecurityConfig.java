@@ -1,4 +1,4 @@
-package willydekeyser.config;
+package org.example.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,8 +39,8 @@ public class SecurityConfig {
 
 	@Bean
 	UserDetailsManager inMemoryUserDetailsManager() {
-		var user1 = User.withUsername("user").password("{noop}password").roles("USER").build();
-		var user2 = User.withUsername("admin").password("{noop}password").roles("USER", "ADMIN").build();
+		org.springframework.security.core.userdetails.UserDetails user1 = User.withUsername("user").password("{noop}password").roles("USER").build();
+		org.springframework.security.core.userdetails.UserDetails user2 = User.withUsername("admin").password("{noop}password").roles("USER", "ADMIN").build();
 		return new InMemoryUserDetailsManager(user1, user2);
 	}
 }

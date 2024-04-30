@@ -1,12 +1,12 @@
-package willydekeyser.controller;
+package org.example.controller;
 
+import org.example.service.AdminService;
+import org.example.service.HomeService;
+import org.example.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import willydekeyser.service.AdminService;
-import willydekeyser.service.HomeService;
-import willydekeyser.service.UserService;
 
 @Controller
 public class HomeController {
