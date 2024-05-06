@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.TrackUserAction;
 import org.example.service.AdminService;
 import org.example.service.HomeService;
 import org.example.service.UserService;
@@ -28,11 +29,14 @@ public class HomeController {
 	}
 	@GetMapping("/private-data")
 	public String privateData(Model model) {
+		adminService.adminServiceMethod("Admin used privat-data service");
 		return "private-data";
 	}
 
+	@TrackUserAction
 	@GetMapping("/public-data")
 	public String publicData(Model model) {
+		userService.userServiceMethod("User used public-data service");
 		return "public-data";
 	}
 
